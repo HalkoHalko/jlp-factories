@@ -1,6 +1,19 @@
 import { onchainTable } from "ponder";
 
-export const example = onchainTable("example", (t) => ({
+export const ManagerCreated = onchainTable("LPManagerCreated", (t) => ({
   id: t.text().primaryKey(),
-  name: t.text(),
+  nonce: t.integer(),
+  lp: t.text(),
+  stage: t.integer(),
+  viewer: t.text(),
+  swapper: t.text(),
+  receiver: t.text(),
+  priceHelper: t.text(),
+  lpManager: t.text(),
+  doubleTracker: t.text(),
+  singleTrackerZero: t.text(),
+  singleTrackerOne: t.text(),
+  compounder: t.text(),
+  router: t.text(),
+  network: t.text(),
 }));
