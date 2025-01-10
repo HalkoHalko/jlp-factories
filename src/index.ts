@@ -2,12 +2,12 @@ import { ponder } from "ponder:registry";
 import { ManagerCreated } from "ponder:schema";
 
 ponder.on("ArbJLPFactory:LPManagerCreated", async ({ event, context }) => {
-  await context.db
+  const row = await context.db
     .insert(ManagerCreated)
     .values({
       id: event.log.id,
       nonce: Number(event.args[2]),
-      lp: event.args[3].lp,
+      lp: event.args[3].lp, 
       viewer: event.args[3].viewer,
       swapper: event.args[3].swapper,
       receiver: event.args[3].receiver,
@@ -24,7 +24,7 @@ ponder.on("ArbJLPFactory:LPManagerCreated", async ({ event, context }) => {
     });
 });
 ponder.on("ApeJLPFactory:LPManagerCreated", async ({ event, context }) => {
-    await context.db
+  const row = await context.db
       .insert(ManagerCreated)
       .values({
         id: event.log.id,
@@ -46,7 +46,7 @@ ponder.on("ApeJLPFactory:LPManagerCreated", async ({ event, context }) => {
       });
   });
   ponder.on("BaseJLPFactory:LPManagerCreated", async ({ event, context }) => {
-    await context.db
+    const row = await context.db
       .insert(ManagerCreated)
       .values({
         id: event.log.id,
@@ -68,7 +68,7 @@ ponder.on("ApeJLPFactory:LPManagerCreated", async ({ event, context }) => {
       });
   });
   ponder.on("BlastJLPFactory:LPManagerCreated", async ({ event, context }) => {
-    await context.db
+    const row = await context.db
       .insert(ManagerCreated)
       .values({
         id: event.log.id,
@@ -90,7 +90,7 @@ ponder.on("ApeJLPFactory:LPManagerCreated", async ({ event, context }) => {
       });
   });
   ponder.on("BeraJLPFactory:LPManagerCreated", async ({ event, context }) => {
-    await context.db
+    const row = await context.db
       .insert(ManagerCreated)
       .values({
         id: event.log.id,
